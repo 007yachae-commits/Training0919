@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink: #ffffff;
+  --muted: #effaff;
+  --dim: #d9f0f7;
+  --surface: #4fa9d0;
+  --tomato: #ff6347;
+  --gold: #ffd700;
+  --clay-shadow: rgba(43, 112, 144, 0.38);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: #87ceeb;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  background: radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.6) 0 6%, transparent 7%), radial-gradient(circle at 82% 10%, rgba(255, 255, 255, 0.35) 0 9%, transparent 10%), linear-gradient(180deg, #87ceeb 0%, #a8e1f2 100%);
+}
+
+a,
+button,
+input {
+  font: inherit;
+}
+
+.setting-shell {
+  width: min(100% - 48px, 1120px);
+  margin: 0 auto;
+  padding: 28px 0 34px;
+}
+
+.setting-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-shadow: 1px 2px 0 var(--clay-shadow);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  color: #ffffff;
+  background: var(--tomato);
+  border-radius: 12px 10px 13px 9px;
+  box-shadow: 0 4px 0 #cf4d38, 0 7px 12px rgba(43, 112, 144, 0.25);
+  font-family: 'Gaegu', cursive;
+  font-size: 20px;
+  font-weight: 700;
+  place-items: center;
+  transform: rotate(-12deg);
+}
+
+.back-link {
+  color: var(--ink);
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.back-link:hover {
+  color: var(--ink);
+}
+
+.setting-content {
+  width: min(100%, 560px);
+  margin: 112px auto 0;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 10px 0 34px;
+  font-size: clamp(34px, 5vw, 52px);
+  color: #ffffff;
+  font-family: 'Gaegu', 'Noto Sans KR', cursive;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 1;
+  text-shadow: 2px 4px 0 var(--clay-shadow);
+}
+
+.setting-panel {
+  padding: 30px;
+  background: rgba(79, 169, 208, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  border-radius: 22px 18px 24px 19px;
+  box-shadow: 0 7px 0 var(--clay-shadow), 0 14px 22px rgba(43, 112, 144, 0.22);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+h3 {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Gaegu', 'Noto Sans KR', cursive;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.panel-heading p {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-size: 12px;
+  letter-spacing: -0.03em;
+}
+
+.panel-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  color: var(--tomato);
+  background: var(--gold);
+  border-radius: 12px 9px 11px 10px;
+  box-shadow: 0 3px 0 #c59e00;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 23px;
+  place-items: center;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.time-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 3px 16px;
+  background: rgba(255, 255, 255, 0.24);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 13px;
+  box-shadow: inset 0 -3px 0 rgba(43, 112, 144, 0.2);
+}
+
+.time-input-wrap:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.22);
+}
+
+input[type='number'] {
+  width: 100%;
+  padding: 10px 0;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 0.6;
+}
+
+.time-input-wrap span {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.input-hint {
+  margin: 10px 0 30px;
+  color: var(--ink);
+  font-size: 11px;
+}
+
+.complete-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 18px;
+  color: #ffffff;
+  background: var(--tomato);
+  border: 0;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 0 #cf4d38;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.complete-button:hover {
+  background: #ff7b63;
+  transform: translateY(-2px);
+}
+
+.complete-button span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .setting-shell {
+    width: min(100% - 32px, 560px);
+    padding-top: 18px;
+  }
+
+  .setting-content {
+    margin-top: 76px;
+  }
+
+  .setting-panel {
+    padding: 24px;
+  }
+}

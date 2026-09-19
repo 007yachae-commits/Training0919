@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting | 운동 기록기</title>
+  <link rel="stylesheet" href="setting.css">
+</head>
+<body>
+  <main class="setting-shell">
+    <header class="setting-topbar">
+      <a class="brand" href="index.html" aria-label="운동 기록기 홈">
+        <span class="brand-mark" aria-hidden="true">↗</span>
+        <span>운동 기록기</span>
+      </a>
+      <a class="back-link" href="index.html">← 돌아가기</a>
+    </header>
+
+    <section class="setting-content" aria-labelledby="setting-title">
+      <p class="eyebrow">PREFERENCES</p>
+      <h1 id="setting-title">운동 시간 설정</h1>
+
+      <form id="setting-form" class="setting-panel" onsubmit="saveTimerSetting(event)">
+        <div class="panel-heading">
+          <div>
+            <h3>Setting</h3>
+            <p>운동을 시작할 때 사용할 기본 시간을 설정하세요.</p>
+          </div>
+          <span class="panel-icon" aria-hidden="true">◷</span>
+        </div>
+
+        <label class="input-label" for="timer-minutes">타이머 시간</label>
+        <div class="time-input-wrap">
+          <input id="timer-minutes" name="timer-minutes" type="number" min="1" max="120" value="45" required>
+          <span>분</span>
+        </div>
+        <p class="input-hint">1분에서 120분까지 설정할 수 있습니다.</p>
+
+        <button class="complete-button" type="submit">설정 완료 <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+  </main>
+  <script src="indox.js"></script>
+</body>
+</html>

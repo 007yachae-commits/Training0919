@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>운동 기록기</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="운동 기록기 홈">
+        <span class="brand-mark" aria-hidden="true">↗</span>
+        <span>운동 기록기</span>
+      </a>
+      <a class="icon-button" href="setting.html" aria-label="설정">
+        <span aria-hidden="true">⚙</span>
+        <span>설정</span>
+      </a>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">TODAY'S TRAINING</p>
+      <h1 id="page-title">운동 기록기</h1>
+      <p class="intro-copy">오늘의 움직임을 선택하고, 나만의 페이스를 기록해 보세요.</p>
+    </section>
+
+    <section class="dashboard" aria-label="운동 기록 대시보드">
+      <div class="timer-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">현재 남은 시간</p>
+            <p class="timer-status"><span class="status-dot"></span>준비됨</p>
+          </div>
+          <span class="session-date">2026. 09. 19</span>
+        </div>
+        <div id="timer" class="timer" aria-label="현재 남은 시간 45분 00초">45<span>:</span>00</div>
+        <div class="progress-track" aria-hidden="true"><span id="progress"></span></div>
+        <div class="timer-meta"><span>운동 시간</span><strong>45분</strong></div>
+      </div>
+
+      <div class="selection-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">운동 종류</p>
+            <p class="panel-description">오늘 할 운동을 선택하세요.</p>
+          </div>
+          <span class="selection-count">01 / 04</span>
+        </div>
+
+        <div class="exercise-list">
+          <label class="exercise-card selected" onclick="selectExercise(this)">
+            <input type="radio" name="exercise" value="cycle" checked>
+            <span class="exercise-icon cycle-icon" aria-hidden="true">◒</span>
+            <span class="exercise-info"><strong>사이클</strong><small>유산소 · 중강도</small></span>
+            <span class="exercise-time">45분</span>
+            <span class="checkmark" aria-hidden="true">✓</span>
+          </label>
+          <label class="exercise-card" onclick="selectExercise(this)">
+            <input type="radio" name="exercise" value="jogging">
+            <span class="exercise-icon jog-icon" aria-hidden="true">⌁</span>
+            <span class="exercise-info"><strong>조깅</strong><small>유산소 · 가벼운 강도</small></span>
+            <span class="exercise-time">30분</span>
+            <span class="checkmark" aria-hidden="true">✓</span>
+          </label>
+          <label class="exercise-card" onclick="selectExercise(this)">
+            <input type="radio" name="exercise" value="marathon">
+            <span class="exercise-icon run-icon" aria-hidden="true">↗</span>
+            <span class="exercise-info"><strong>마라톤</strong><small>유산소 · 고강도</small></span>
+            <span class="exercise-time">90분</span>
+            <span class="checkmark" aria-hidden="true">✓</span>
+          </label>
+          <label class="exercise-card" onclick="selectExercise(this)">
+            <input type="radio" name="exercise" value="hiking">
+            <span class="exercise-icon hike-icon" aria-hidden="true">△</span>
+            <span class="exercise-info"><strong>등산</strong><small>전신 · 중강도</small></span>
+            <span class="exercise-time">60분</span>
+            <span class="checkmark" aria-hidden="true">✓</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="운동 제어">
+      <button class="control-button primary" type="button" onclick="startTimer()"><span aria-hidden="true">▶</span>시작</button>
+      <button class="control-button" type="button" onclick="stopTimer()"><span aria-hidden="true">Ⅱ</span>정지</button>
+      <button class="control-button reset" type="button" onclick="resetTimer()"><span aria-hidden="true">↻</span>초기화</button>
+    </section>
+
+    <footer class="footer-note"><span>⌁</span> 운동을 시작하면 시간이 자동으로 기록됩니다.</footer>
+  </main>
+  <script src="indox.js"></script>
+</body>
+</html>
